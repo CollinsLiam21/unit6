@@ -7,8 +7,8 @@ file = open(input('Enter file name: '))
 new = []
 for line in file:
     words = line.split()
-    if len(words)>0:
-        new.append(line)
+    if len(line)>0:
+        new.append(words)
 
 print(new)
 
