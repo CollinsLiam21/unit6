@@ -4,8 +4,8 @@
 
 file = open('engmix.txt')
 
-longest = 0
+longest = ''
 for item in file:
-    if len(item) > longest:
+    if len(item) > len(longest):
         longest = item
 print(longest)
