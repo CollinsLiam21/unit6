@@ -10,4 +10,5 @@ for item in file:
 
 i = 1
 while i<=21:
-    print(i,
+    print(i,'-letter words: ',L[i])
+    i+=1
