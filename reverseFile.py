@@ -6,7 +6,7 @@ file = open(input('Enter file name: '))
 
 new = []
 for line in file:
-    line = line.split()
+    line = line.strip()
     if len(line)>0:
         new.append(line)
 
