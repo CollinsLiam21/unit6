@@ -7,6 +7,9 @@ while end:
         if line.strip() == word:
             print(word, 'is in the dictionary!')
             end = False
+
+if end == True:
+    print(word, 'is not in the dictionary :(')
         
         
     
