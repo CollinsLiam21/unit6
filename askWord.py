@@ -1,13 +1,13 @@
-word = input('Enter a word: ')
+num = int(input('Enter a number: '))
 file = open('engmix.txt')
 
-end = True
+new = []
 for line in file:
-    if line.strip() == word:
-        print(word, 'is in the dictionary!')
-        end = False
-        break
+    line = line.strip()
+    if len(line) > 0:
+        new.append(line)
 
-if end == True:
-    print(word, 'is not in dictionary')
+print('The',num,'th word is',new[num-1])
+
+
     
