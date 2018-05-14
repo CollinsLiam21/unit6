@@ -1,14 +1,12 @@
-
+letter = input('Enter a letter: ')
 file = open('lastWordDemo.py')
 
-new = []
+counter = ''
 for line in file:
     line = line.strip()
-    if len(line)>0:
-        new.append(line)
-
-for word in new:
-    print(word,'!')
+    if line.count(letter) > counter.count(letter):
+        counter = line
+print(counter)
 
 
 
