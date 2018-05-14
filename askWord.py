@@ -1,5 +1,6 @@
 word = input('Enter a word: ')
 file = open('engmix.txt')
+filzz = open('engmix.txt').split()
 
 end = True
 while end:
@@ -8,8 +9,6 @@ while end:
             print(word, 'is in the dictionary!')
             end = False
 
-if end == True:
-    print(word, 'is not in the dictionary :(')
         
         
     
