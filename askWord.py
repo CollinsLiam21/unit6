@@ -2,9 +2,9 @@ word = input('Enter a word: ')
 file = open('engmix.txt')
 
 end = True
-while end == True:
+while end:
     for line in file:
-        if line == word:
+        if line.strip() == word:
             print(word, 'is in the dictionary!')
             end = False
         
