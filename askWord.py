@@ -1,13 +1,18 @@
-num = int(input('Enter a number: '))
-file = open('engmix.txt')
+
+file = open('lastWordDemo.py')
 
 new = []
 for line in file:
     line = line.strip()
-    if len(line) > 0:
+    if len(line)>0:
         new.append(line)
 
-print('The',num,'th word is',new[num-1])
+for word in new:
+    print(word,'!')
+
+
+
+
 
 
     
