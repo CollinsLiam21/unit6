@@ -29,8 +29,8 @@ for line in file:
     L.append(line)
 print(L[num-1])
 
-file = open('lastWordDemo.py')
-for line in file:
+stuff = open('lastWordDemo.py')
+for line in stuff:
     print(line.strip() + '!')
 
 
