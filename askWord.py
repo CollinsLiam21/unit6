@@ -8,9 +8,17 @@ for line in file:
         counter = line
 print(counter)
 
+word = input('Enter a word: ')
 
-
-
+inD = False
+for line in file:
+    line = line.strip()
+    if word == line:
+        print('In dictionary')
+        inD = True
+        break
+if not inD:
+    print('no')
 
 
     
