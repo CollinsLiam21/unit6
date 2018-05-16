@@ -1,6 +1,7 @@
-letter = input('Enter a letter: ')
-file = open('lastWordDemo.py')
+file = open('engmix.txt')
 
+
+letter = input('Enter a letter: ')
 counter = ''
 for line in file:
     line = line.strip()
@@ -8,8 +9,8 @@ for line in file:
         counter = line
 print(counter)
 
-word = input('Enter a word: ')
 
+word = input('Enter a word: ')
 inD = False
 for line in file:
     line = line.strip()
@@ -19,6 +20,20 @@ for line in file:
         break
 if not inD:
     print('no')
+    
+
+num = int(input('enter a number: '))
+L = []
+for line in file:
+    line = line.strip()
+    L.append(line)
+print(L[num-1])
+
+file = open('lastWordDemo.py')
+for line in file:
+    print(line.strip() + '!')
+
+
 
 
     
