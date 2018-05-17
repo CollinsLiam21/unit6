@@ -10,6 +10,8 @@ for item in file:
     for ch in item:
         new = ch + new
     L = new.split(' ')
+    if L == L.reverse():
+        print(item)
     
     
 
