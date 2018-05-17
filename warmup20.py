@@ -5,5 +5,6 @@
 file = open('engmix.txt')
 
 for line in file:
-    if 'collins' in file:
-        print(file)
+    line = line.strip()
+    if 'c' in line and 'o' in line and 'l' in line and 'i' in line and 'n' in line and 's' in line:
+        print(line)
