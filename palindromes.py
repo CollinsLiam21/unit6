@@ -6,11 +6,14 @@ file = open('engmix.txt')
 
 
 for item in file:
+    item = item.strip()
+    anotherList = []
+    anotherList.append(item)
     new = ''
     for ch in item:
         new = ch + new
-    L = new.split(' ')
-    if L == L.reverse():
+    newList = new.split(' ')
+    if anotherList == newList:
         print(item)
     
     
