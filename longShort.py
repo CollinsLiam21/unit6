@@ -4,8 +4,8 @@
 
 file = open('engmix.txt')
 
-longList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-shortList = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+longList = ['']*26
+shortList = ['']*26
 alph = 'abcdefghijklmnopqrstuvwxyz'
 
 for line in file:
@@ -17,6 +17,8 @@ for line in file:
 
 print(longList.strip())
 print(shortList.strip())
+
+
     
     
 
