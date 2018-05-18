@@ -18,3 +18,11 @@ for line in file:
         if line[0] == 'r':
             i += 1
 print(i)
+
+#Program 3
+number = int(input('Enter a number: '))
+for line in file:
+    if len(line) == number:
+        print(line)
+        break
+
