@@ -5,7 +5,7 @@
 file = open('engmix.txt')
 
 #Program 1
-'''for line in file:
+for line in file:
     line = line.strip()
     if line.count('c') == 3 and line.count('p') == 2:
         print(line)
@@ -33,7 +33,7 @@ letter = input('Enter a letter: ')
 for line in file:
     if letter not in line:
         tot += 1
-print(tot)'''
+print(tot)
 
 #Program 5
 new = []
