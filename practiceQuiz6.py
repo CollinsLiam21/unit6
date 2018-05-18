@@ -11,9 +11,9 @@ for line in file:
         print(line)
 
 #Program 2
+i = 0
 for line in file:
     line = line.strip()
-    i = 0
     if len(line) > 0:
         if line[0] == 'r':
             i += 1
