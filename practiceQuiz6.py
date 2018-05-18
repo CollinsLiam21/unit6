@@ -26,4 +26,12 @@ for line in file:
     if len(line) == number:
         print(line)
         break
+    
+#Program 4
+tot = 0
+letter = input('Enter a letter: ')
+for line in file:
+    if letter not in line:
+        tot += 1
+print(tot)
 
