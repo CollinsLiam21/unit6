@@ -22,6 +22,7 @@ print(i)
 #Program 3
 number = int(input('Enter a number: '))
 for line in file:
+    line = line.strip()
     if len(line) == number:
         print(line)
         break
