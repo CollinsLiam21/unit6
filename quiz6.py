@@ -27,13 +27,23 @@ for line in file:
     if len(line) > 0:
         if line[0] == letterz and len(line) == num:
             print(line)'''
+
+#Program 4
+i = 0
+for line in file:
+    if len(line) >= 10:
+        i += 1
+    elif i == 8000:
+        print(line)
+        break
             
+
 #Program 5
-vowel = ''
+'''vowel = ''
 for line in file:
     if (line.count('a') + line.count('e') + line.count('i') + line.count('o') + line.count('u')) > (vowel.count('a') + vowel.count('e') + vowel.count('i') + vowel.count('o') + vowel.count('u')):
         vowel = line
-print(vowel)
+print(vowel)'''
         
 
 
