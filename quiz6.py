@@ -31,9 +31,10 @@ for line in file:
 #Program 4
 i = 0
 for line in file:
-    if len(line) >= 10:
+    line = line.strip()
+    if len(line) > 9:
         i += 1
-    elif i == 8000:
+    if i == 8000:
         print(line)
         break
             
