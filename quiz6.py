@@ -9,7 +9,7 @@ file = open('engmix.txt')
 for line in file:
     line = line.strip()
     if line.count(letter) == 4:
-        print(line)'''
+        print(line)
 
 #Program 2
 for line in file:
@@ -17,4 +17,13 @@ for line in file:
     if len(line) >= 9:
         if line[0] == line[4] and line[4] == line[8]:
             print(line)
-            break
+            break'''
+            
+#Program 3
+letterz = input('Enter a letter: ')
+num = int(input('Enter a number: '))
+for line in file:
+    line = line.split()
+    if len(line) > 0:
+        if line[0] == letter and len(line) == num:
+            print(line)
