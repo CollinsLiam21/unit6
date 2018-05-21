@@ -23,7 +23,7 @@ for line in file:
 letterz = input('Enter a letter: ')
 num = int(input('Enter a number: '))
 for line in file:
-    line = line.split()
+    line = line.strip()
     if len(line) > 0:
-        if line[0] == letter and len(line) == num:
+        if line[0] == letterz and len(line) == num:
             print(line)
