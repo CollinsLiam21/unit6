@@ -17,7 +17,7 @@ for line in file:
     if len(line) >= 9:
         if line[0] == line[4] and line[4] == line[8]:
             print(line)
-            break'''
+            break
             
 #Program 3
 letterz = input('Enter a letter: ')
@@ -26,4 +26,19 @@ for line in file:
     line = line.strip()
     if len(line) > 0:
         if line[0] == letterz and len(line) == num:
-            print(line)
+            print(line)'''
+            
+#Program 5
+vowel = ''
+for line in file:
+    if (line.count('a') + line.count('e') + line.count('i') + line.count('o') + line.count('u')) > (vowel.count('a') + vowel.count('e') + vowel.count('i') + vowel.count('o') + vowel.count('u')):
+        vowel = line
+print(vowel)
+        
+
+
+
+
+
+
+
