@@ -5,7 +5,7 @@
 file = open('engmix.txt')
 
 #Program 1
-'''letter = input('Enter a letter: ')
+letter = input('Enter a letter: ')
 for line in file:
     line = line.strip()
     if line.count(letter) == 4:
@@ -26,7 +26,7 @@ for line in file:
     line = line.strip()
     if len(line) > 0:
         if line[0] == letterz and len(line) == num:
-            print(line)'''
+            print(line)
 
 #Program 4
 i = 0
@@ -38,13 +38,12 @@ for line in file:
         print(line)
         break
             
-
 #Program 5
-'''vowel = ''
+vowel = ''
 for line in file:
     if (line.count('a') + line.count('e') + line.count('i') + line.count('o') + line.count('u')) > (vowel.count('a') + vowel.count('e') + vowel.count('i') + vowel.count('o') + vowel.count('u')):
         vowel = line
-print(vowel)'''
+print(vowel)
         
 
 
