@@ -15,3 +15,6 @@ row = int(input('Enter a row: '))
 col = int(input('Enter a column: '))
 board[row-1][col-1] = 'X'
 buildBoard(board)
+
+if __name__ == '__main__':
+    
