@@ -12,7 +12,7 @@ def buildBoard(board):
             print(board[r][c],end=' ')
         print()
 
-board = [['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','','']]
+board = [['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['x','','','','','','','']]
 #buildBoard(board)
 
 '''row = int(input('Enter a row: '))
@@ -31,13 +31,6 @@ if __name__ == '__main__':
     
     
     Sprite(greenGrid)
-    Sprite(blackLine, (A/8,0))
-    Sprite(blackLine, ((A/8)*2,0))
-    Sprite(blackLine, ((A/8)*3,0))
-    Sprite(blackLine, ((A/8)*4,0))
-    Sprite(blackLine, ((A/8)*5,0))
-    Sprite(blackLine, ((A/8)*6,0))
-    Sprite(blackLine, ((A/8)*7,0))
     
     
     #App().listenMouseEvent('click',mouseClick)
