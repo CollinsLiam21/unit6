@@ -9,7 +9,7 @@ from ggame import *
 def buildBoard():
     board = [['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','','']]
     
-def redrawall():
+def redrawAll():
     A = 60
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
     blackLine = LineAsset(0,A,LineStyle(4,black))
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     black = Color(0x000000,1)
     green = Color(0x008000,1)
     
-    redrawall()
+    redrawAll()
     
     
     #App().listenMouseEvent('click',mouseClick)
