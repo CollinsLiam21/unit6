@@ -18,3 +18,8 @@ buildBoard(board)
 
 if __name__ == '__main__':
     
+    white = (0x000000,1)
+    black = (0xFFFFFF,1)
+    green = (0x00FF00,1)
+    
+    greenGrid = 
