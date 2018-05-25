@@ -4,15 +4,20 @@
 
 from ggame import *
 
-A = 500
 
-def buildBoard(board):
+
+def buildBoard():
+    board = [['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','','']]
+    
+def redrawall():
+    A = 60
+    greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
+    blackLine = LineAsset(0,A,LineStyle(4,black))
     for r in range(0,8):
         for c in range(0,8):
-            print(board[r][c],end=' ')
-        print()
+            Sprite(greenGrid,(A*r,A*c))
 
-board = [['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','',''],['','','','','','','','']]
+
 #buildBoard(board)
 
 '''row = int(input('Enter a row: '))
@@ -22,15 +27,12 @@ buildBoard(board)'''
 
 if __name__ == '__main__':
     
+    
     white = Color(0xFFFFFF,1)
     black = Color(0x000000,1)
     green = Color(0x008000,1)
     
-    greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
-    blackLine = LineAsset(0,A,LineStyle(4,black)) #x_endpoint, y_endpoint, lineStyle
-    
-    
-    Sprite(greenGrid)
+    redrawall()
     
     
     #App().listenMouseEvent('click',mouseClick)
