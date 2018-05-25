@@ -2,6 +2,8 @@
 #5/23/18
 #actualOthello.py
 
+from ggame import *
+
 def buildBoard(board):
     for r in range(0,8):
         for c in range(0,8):
@@ -9,17 +11,21 @@ def buildBoard(board):
         print()
 
 board = [['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','',''],['x','','','','','','','']]
-buildBoard(board)
+#buildBoard(board)
 
-row = int(input('Enter a row: '))
+'''row = int(input('Enter a row: '))
 col = int(input('Enter a column: '))
 board[row-1][col-1] = 'X'
-buildBoard(board)
+buildBoard(board)'''
 
 if __name__ == '__main__':
     
-    white = (0x000000,1)
-    black = (0xFFFFFF,1)
-    green = (0x00FF00,1)
+    white = Color(0x000000,1)
+    black = Color(0xFFFFFF,1)
+    green = Color(0x00FF00,1)
     
-    greenGrid = 
+    greenGrid = RectangleAsset(500,500,LineStyle(1,black),green)
+    Sprite(greenGrid)
+    
+    #App().listenMouseEvent('click',mouseClick)
+    App().run()
