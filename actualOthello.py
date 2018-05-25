@@ -8,6 +8,10 @@ from ggame import *
 
 def buildBoard():
     board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+    board[4][4] = 2
+    board[3][3] = 2
+    board[3][4] = 2
+    board[4][3] = 2
 
 def redrawAll():
     A = 60
@@ -18,11 +22,11 @@ def redrawAll():
         for c in range(0,8):
             Sprite(greenGrid,(A*r,A*c))
             
-def mouseClick(event):
+'''def mouseClick(event):
     if data['gameOver'] == False:
         if (event.x < A and event.y < A) and board[0][0] == 0:
             Sprite(whiteCircle, (A/2,A/2))
-            board[0][0] = 
+            board[0][0] = 1
         elif (150 < event.x < 350 and event.y < 150) and isEmpty(2) == True:
             Sprite(x, (215,10))
             data['square2'] = 'x'
@@ -46,15 +50,8 @@ def mouseClick(event):
             data['square8'] = 'x'
         elif (350 < event.x < 550 and 350 < event.y < 550) and isEmpty(9) == True:
             Sprite(x, (400,380))
-            data['square9'] = 'x'
+            data['square9'] = 'x'''
 
-
-#buildBoard(board)
-
-'''row = int(input('Enter a row: '))
-col = int(input('Enter a column: '))
-board[row-1][col-1] = 'X'
-buildBoard(board)'''
 
 if __name__ == '__main__':
     
