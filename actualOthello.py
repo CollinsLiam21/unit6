@@ -13,7 +13,7 @@ def redrawAll():
     A = 60
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
     blackLine = LineAsset(0,A,LineStyle(4,black))
-    whiteCircle = CircleAsset(A-2,
+    whiteCircle = CircleAsset(A-2,LineStyle(1,white),white)
     for r in range(0,8):
         for c in range(0,8):
             Sprite(greenGrid,(A*r,A*c))
@@ -21,8 +21,8 @@ def redrawAll():
 def mouseClick(event):
     if data['gameOver'] == False:
         if (event.x < A and event.y < A) and board[0][0] == 0:
-            Sprite(x, (25,10))
-            data['square1'] = 'x'
+            Sprite(whiteCircle, (A/2,A/2))
+            board[0][0] = 
         elif (150 < event.x < 350 and event.y < 150) and isEmpty(2) == True:
             Sprite(x, (215,10))
             data['square2'] = 'x'
