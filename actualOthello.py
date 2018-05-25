@@ -4,7 +4,7 @@
 
 from ggame import *
 
-
+A = 60
 
 def buildBoard():
     board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
@@ -17,13 +17,22 @@ def redrawAll():
     A = 60
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
     blackLine = LineAsset(0,A,LineStyle(4,black))
-    whiteCircle = CircleAsset(A-2,LineStyle(1,white),white)
     for r in range(0,8):
         for c in range(0,8):
             Sprite(greenGrid,(A*r,A*c))
+            '''buildBoard()
+            if board[r][c] == 1:
+                Sprite(whiteCircle,(A*r,A*c))
+            if board[r][c] == 2:
+                Sprite(blackCircle,(A*r,A*c))'''
+            
             
 def mouseClick(event):
-    
+    #board[(event.x//A)][(event.y//A)] = 1
+    whiteCircle = CircleAsset(A-2,LineStyle(1,white),white)
+    blackCircle = CircleAsset(A-2,LineStyle(1,white),black)
+    column = event.x//A
+    row = event.y//A
 
 
 if __name__ == '__main__':
