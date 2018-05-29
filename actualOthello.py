@@ -32,8 +32,11 @@ def mouseClick(event):
     #board[row][column] = 1
     column = event.x//A
     row = event.y//A
-    Sprite(whiteCircle, (column*A,row*A))
-
+    if data['board'].count(1) == data['board'].count(2):
+        data['board'][row][column] = 1
+    if data['board'].count(1) > data['board'].count(2):
+        data['board'][row][column] = 2
+    
 
 if __name__ == '__main__':
     
