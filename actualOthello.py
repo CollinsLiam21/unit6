@@ -17,7 +17,6 @@ def buildBoard():
 def redrawAll():
     A = 60
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
-    blackLine = LineAsset(0,A,LineStyle(4,black))
     for r in range(0,8):
         for c in range(0,8):
             Sprite(greenGrid,(A*r,A*c))
