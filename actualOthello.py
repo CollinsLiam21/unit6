@@ -30,8 +30,8 @@ def redrawAll():
 
 def mouseClick(event):
     #board[row][column] = 1
-    column = event.x//A
-    row = event.y//A
+    column = int(event.x//A)
+    row = int(event.y//A)
     print(data['board'].count(1))
     '''if data['board'].count(1) == data['board'].count(2):
         data['board'][row][column] = 1
