@@ -15,6 +15,8 @@ def buildBoard():
     return board
 
 def redrawAll():
+    for item in App().spritelist[:]:
+        item.destroy()
     A = 60
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
     for r in range(0,8):
@@ -31,11 +33,14 @@ def mouseClick(event):
     #board[row][column] = 1
     column = int(event.x//A)
     row = int(event.y//A)
-    print(data['board'].count(1))
-    '''if data['board'].count(1) == data['board'].count(2):
-        data['board'][row][column] = 1
-    elif data['board'].count(1) > data['board'].count(2):
-        data['board'][row][column] = 2'''
+    if data['turn'] == 1:
+        data['board'][column][row] = 1
+        data['turn'] = 2
+        redrawAll()
+    else:
+        data['board'][column][row] = 2
+        data['turn'] = 1
+        redrawAll()
     
 
 if __name__ == '__main__':
@@ -43,6 +48,7 @@ if __name__ == '__main__':
     
     data = {}
     data['board'] = buildBoard()
+    data['turn'] = 1
     
     whiteCircle = CircleAsset(A/2,LineStyle(1,white),white)
     blackCircle = CircleAsset(A/2,LineStyle(1,black),black)
