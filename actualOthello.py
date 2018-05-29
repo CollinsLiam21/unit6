@@ -30,15 +30,9 @@ def redrawAll():
 
 def mouseClick(event):
     #board[row][column] = 1
-    i = 0
     column = event.x//A
     row = event.y//A
-    if i%2 == 0:
-        Sprite(whiteCircle, (column*A,row*A))
-        i+=1
-    '''if i%2 != 0:
-        Sprite(blackCircle, (column*A,row*A))
-        i+=1'''
+    Sprite(whiteCircle, (column*A,row*A))
 
 
 if __name__ == '__main__':
