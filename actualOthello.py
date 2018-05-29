@@ -29,7 +29,7 @@ def redrawAll():
             
 
 def mouseClick(event):
-    #board[(event.x//A)][(event.y//A)] = 1
+    #board[row][column] = 1
     i = 0
     column = event.x//A
     row = event.y//A
