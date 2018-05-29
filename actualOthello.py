@@ -36,9 +36,9 @@ def mouseClick(event):
     if i%2 == 0:
         Sprite(whiteCircle, (column*A,row*A))
         i+=1
-    if i%2 != 0:
+    '''if i%2 != 0:
         Sprite(blackCircle, (column*A,row*A))
-        i+=1
+        i+=1'''
 
 
 if __name__ == '__main__':
