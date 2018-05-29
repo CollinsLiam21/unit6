@@ -12,6 +12,7 @@ def buildBoard():
     board[3][3] = 2
     board[3][4] = 1
     board[4][3] = 1
+    return board
 
 def redrawAll():
     A = 60
@@ -20,11 +21,10 @@ def redrawAll():
     for r in range(0,8):
         for c in range(0,8):
             Sprite(greenGrid,(A*r,A*c))
-            '''buildBoard()
-            if board[r][c] == 1:
+            if data['board'][r][c] == 1:
                 Sprite(whiteCircle,(A*r,A*c))
-            if board[r][c] == 2:
-                Sprite(blackCircle,(A*r,A*c))'''
+            if data['board'][r][c] == 2:
+                Sprite(blackCircle,(A*r,A*c))
             
             
 
@@ -37,8 +37,12 @@ def mouseClick(event):
 
 if __name__ == '__main__':
     
+    
+    data = {}
+    data['board'] = buildBoard()
+    
     whiteCircle = CircleAsset(A/2,LineStyle(1,white),white)
-    blackCircle = CircleAsset(A/2,LineStyle(1,white),black)
+    blackCircle = CircleAsset(A/2,LineStyle(1,black),black)
     white = Color(0xFFFFFF,1)
     black = Color(0x000000,1)
     green = Color(0x008000,1)
