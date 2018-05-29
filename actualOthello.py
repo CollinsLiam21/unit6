@@ -34,7 +34,7 @@ def mouseClick(event):
     row = event.y//A
     if data['board'].count(1) == data['board'].count(2):
         data['board'][row][column] = 1
-    if data['board'].count(1) > data['board'].count(2):
+    elif data['board'].count(1) > data['board'].count(2):
         data['board'][row][column] = 2
     
 
