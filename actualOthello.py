@@ -27,11 +27,16 @@ def redrawAll():
                 Sprite(blackCircle,(A*r,A*c))'''
             
             
+i = 0
 def mouseClick(event):
     #board[(event.x//A)][(event.y//A)] = 1
     column = event.x//A
     row = event.y//A
-    Sprite(whiteCircle, (column*A,row*A))
+    if i%2 == 0:
+        Sprite(whiteCircle, (column*A,row*A))
+        buildBoard()
+        board[row][column] = 1
+        i+=1
 
 
 if __name__ == '__main__':
@@ -42,7 +47,6 @@ if __name__ == '__main__':
     black = Color(0x000000,1)
     green = Color(0x008000,1)
     
-    #buildBoard()
     redrawAll()
     
     
