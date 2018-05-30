@@ -34,14 +34,15 @@ def flipEast(rowLast,colLast):
     i = 1
     while data['board'][rowLast][colLast + i] == data['turn']:
         i += 1
-    i = i
     while data['board'][rowLast][colLast + i] == data['turn']:
         if data['turn'] == 2:
             data['board'][rowLast][colLast + i] = 1
+            i = i-1
         else:
             data['board'][rowLast][colLast + i] = 2
-        i -= 1
+            i = i-1
     redrawAll()
+        
     
 
 def mouseClick(event):
