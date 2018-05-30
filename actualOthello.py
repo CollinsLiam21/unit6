@@ -24,13 +24,14 @@ def redrawAll():
             Sprite(greenGrid,(A*r,A*c))
             if data['board'][r][c] == 1:
                 Sprite(whiteCircle,(A*r,A*c))
-            if data['board'][r][c] == 2:
+            elif data['board'][r][c] == 2:
                 Sprite(blackCircle,(A*r,A*c))
-            
+                
+#def flipPieces(row,col):
+    
             
 
 def mouseClick(event):
-    #board[row][column] = 1
     column = int(event.x//A)
     row = int(event.y//A)
     if data['turn'] == 1:
