@@ -27,7 +27,12 @@ def redrawAll():
             elif data['board'][r][c] == 2:
                 Sprite(blackCircle,(A*r,A*c))
                 
-#def flipPieces(row,col):
+def flipPieces(rowLast,colLast):
+    flipEast(rowLast,colLast)
+
+def flipEast(rowLast,colLast):
+    if data['board'][rowLast][colLast] == 1 and data['board'][rowLast][colLast+2] == 1 and data['board'][rowLast][colLast+1] == 2:
+        data['board'][rowLast][colLast+1] == 1
     
             
 
