@@ -39,10 +39,6 @@ def flipEast(rowLast,colLast):
         i -= 1
     redrawAll()
     
-    if data['board'][rowLast][colLast] == 1 and data['board'][rowLast][colLast+2] == 1 and data['board'][rowLast][colLast+1] == 2:
-        data['board'][rowLast][colLast+1] = 1
-        redrawAll()
-    
             
 
 def mouseClick(event):
