@@ -32,7 +32,8 @@ def flipPieces(rowLast,colLast):
 
 def flipEast(rowLast,colLast):
     if data['board'][rowLast][colLast] == 1 and data['board'][rowLast][colLast+2] == 1 and data['board'][rowLast][colLast+1] == 2:
-        data['board'][rowLast][colLast+1] == 1
+        data['board'][rowLast][colLast+1] = 1
+        redrawAll()
     
             
 
@@ -43,10 +44,13 @@ def mouseClick(event):
         data['board'][column][row] = 1
         data['turn'] = 2
         redrawAll()
+        flipPieces(row,column)
     else:
         data['board'][column][row] = 2
         data['turn'] = 1
         redrawAll()
+        flipPieces(row,column)
+    
     
 
 if __name__ == '__main__':
