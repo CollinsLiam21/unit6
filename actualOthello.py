@@ -35,6 +35,7 @@ def flipEast(rowLast,colLast):
     while data['board'][rowLast][colLast + i] == 2:
         i += 1
     while data['board'][rowLast][colLast + i] == 2:
+        data['board'][rowLast][colLast + i] = 1
         i -= 1
     
     if data['board'][rowLast][colLast] == 1 and data['board'][rowLast][colLast+2] == 1 and data['board'][rowLast][colLast+1] == 2:
