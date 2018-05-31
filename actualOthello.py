@@ -52,13 +52,14 @@ def mouseClick(event):
     if data['turn'] == 1:
         data['board'][column][row] = 1
         data['turn'] = 2
-        redrawAll()
         flipPieces(row,column)
+        redrawAll()
     else:
         data['board'][column][row] = 2
         data['turn'] = 1
-        redrawAll()
         flipPieces(row,column)
+        redrawAll()
+        
     
     
 
