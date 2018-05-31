@@ -51,11 +51,11 @@ def mouseClick(event):
     column = int(event.x//A)
     row = int(event.y//A)
     if data['turn'] == 1:
-        data['board'][column][row] = 1
+        data['board'][row][column] = 1
         data['turn'] = 2
         flipPieces(row,column)
     else:
-        data['board'][column][row] = 2
+        data['board'][row][column] = 2
         data['turn'] = 1
         flipPieces(row,column)
         
