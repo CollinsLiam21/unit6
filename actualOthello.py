@@ -34,15 +34,15 @@ def flipEast(rowLast,colLast):
     i = 1
     while data['board'][rowLast][colLast + i] == data['turn']:
         i += 1
-    if data['board'][rowLast][colLast + i] !=0 and data['board'][rowLast][colLast + i] != data['turn']:
-            while data['board'][rowLast][colLast + i - 1] == data['turn']:
-                if i > 0:
-                    if data['turn'] == 2:
-                        data['board'][rowLast][colLast + i -1] = 1
-                        i = i-1
-                    else:
-                        data['board'][rowLast][colLast + i -1] = 2
-                        i = i-1
+    if data['board'][rowLast][colLast + i] !=0:
+        print('flipping')
+        while i > 1:
+            if data['turn'] == 2:
+                data['board'][rowLast][colLast + i -1] = 1
+                i = i-1
+            else:
+                data['board'][rowLast][colLast + i -1] = 2
+                i = i-1
     redrawAll()
 
     
