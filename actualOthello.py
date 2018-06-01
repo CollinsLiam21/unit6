@@ -35,6 +35,8 @@ def flipPieces(rowLast,colLast):
     flipNorth(rowLast,colLast)
     flipSouth(rowLast,colLast)
     flipNorthWest(rowLast,colLast)
+    flipNorthEast(rowLast,colLast)
+
 
 def flipEast(rowLast,colLast):
     i = 1
