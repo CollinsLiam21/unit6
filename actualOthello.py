@@ -32,6 +32,7 @@ def flipPieces(rowLast,colLast):
         flipEast(rowLast,colLast)
     if colLast != 0:
         flipWest(rowLast,colLast)
+    flipNorth(rowLast,colLast)
 
 def flipEast(rowLast,colLast):
     i = 1
