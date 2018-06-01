@@ -30,7 +30,8 @@ def redrawAll():
 def flipPieces(rowLast,colLast):
     if colLast != 7:
         flipEast(rowLast,colLast)
-    flipWest(rowLast,colLast)
+    if colLast != 0:
+        flipWest(rowLast,colLast)
 
 def flipEast(rowLast,colLast):
     i = 1
