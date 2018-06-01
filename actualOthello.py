@@ -28,19 +28,19 @@ def redrawAll():
                 Sprite(blackCircle,(A*c,A*r))
                 
 def flipPieces(rowLast,colLast):
-    if colLast != 7:
+    if colLast != 7 and data['board'][rowLast + 1][colLast] != 0:
         flipEast(rowLast,colLast)
-    if colLast != 0:
+    if colLast != 0 and data['board'][rowLast - 1][colLast] != 0:
         flipWest(rowLast,colLast)
-    if rowLast != 0:
+    if rowLast != 0 and data['board'][rowLast][colLast - 1] != 0:
         flipNorth(rowLast,colLast)
-    if rowLast != 7:
+    if rowLast != 7 and data['board'][rowLast][colLast + 1] != 0:
         flipSouth(rowLast,colLast)
-    if colLast != 0 and rowLast != 0:
+    if colLast != 0 and rowLast != 0 and data['board'][rowLast - 1][colLast - 1] != 0:
         flipNorthWest(rowLast,colLast)
-    if colLast != 7 and rowLast != 0:
+    if colLast != 7 and rowLast != 0 and data['board'][rowLast - 1][colLast + 1] != 0:
         flipNorthEast(rowLast,colLast)
-    if colLast != 0 and rowLast != 7:
+    if colLast != 0 and rowLast != 7 and data['board'][rowLast + 1][colLast] != 0:
         flipSouthWest(rowLast,colLast)
     if colLast != 7 and rowLast != 7:
         flipSouthEast(rowLast,colLast)
