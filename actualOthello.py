@@ -66,16 +66,16 @@ def flipWest(rowLast,colLast):
 
 def flipNorth(rowLast,colLast):
     i = 1
-    while data['board'][rowLast + i][colLast] == data['turn']:
+    while data['board'][rowLast - i][colLast] == data['turn']:
         i += 1
-    if data['board'][rowLast + i][colLast] !=0:
+    if data['board'][rowLast - i][colLast] !=0:
         print('flipping')
         while i > 1:
             if data['turn'] == 2:
-                data['board'][rowLast + i -1][colLast] = 1
+                data['board'][rowLast - i +1][colLast] = 1
                 i -= 1
             else:
-                data['board'][rowLast + i -1][colLast] = 2
+                data['board'][rowLast - i +1][colLast] = 2
                 i -= 1
     redrawAll()
     
