@@ -28,7 +28,8 @@ def redrawAll():
                 Sprite(blackCircle,(A*c,A*r))
                 
 def flipPieces(rowLast,colLast):
-    flipEast(rowLast,colLast)
+    if colLast != 7:
+        flipEast(rowLast,colLast)
     flipWest(rowLast,colLast)
 
 def flipEast(rowLast,colLast):
