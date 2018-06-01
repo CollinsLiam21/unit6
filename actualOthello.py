@@ -40,9 +40,9 @@ def flipPieces(rowLast,colLast):
         flipNorthWest(rowLast,colLast)
     if colLast != 7 and rowLast != 0 and data['board'][rowLast - 1][colLast + 1] != 0:
         flipNorthEast(rowLast,colLast)
-    if colLast != 0 and rowLast != 7 and data['board'][rowLast + 1][colLast] != 0:
+    if colLast != 0 and rowLast != 7 and data['board'][rowLast + 1][colLast - 1] != 0:
         flipSouthWest(rowLast,colLast)
-    if colLast != 7 and rowLast != 7:
+    if colLast != 7 and rowLast != 7 and data['board'][rowLast + 1][colLast + 1] != 0:
         flipSouthEast(rowLast,colLast)
 
 
