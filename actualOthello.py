@@ -29,6 +29,7 @@ def redrawAll():
                 
 def flipPieces(rowLast,colLast):
     flipEast(rowLast,colLast)
+    flipWest(rowLast,colLast)
 
 def flipEast(rowLast,colLast):
     i = 1
