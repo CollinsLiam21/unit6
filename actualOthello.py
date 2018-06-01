@@ -107,7 +107,7 @@ def flipNorthWest(rowLast,colLast):
                 data['board'][rowLast - i +1][colLast - i +1] = 1
                 i -= 1
             else:
-                data['board'][rowLast][colLast - i +1] = 2
+                data['board'][rowLast - i +1][colLast - i +1] = 2
                 i -= 1
     redrawAll()
 
