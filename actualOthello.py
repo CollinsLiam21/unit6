@@ -55,10 +55,10 @@ def flipWest(rowLast,colLast):
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast][colLast - i + 1] = 1
-                i += 1
+                i -= 1
             else:
                 data['board'][rowLast][colLast - i + 1] = 2
-                i += 1
+                i -= 1
     redrawAll()
 
     
