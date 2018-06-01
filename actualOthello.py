@@ -21,11 +21,11 @@ def redrawAll():
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
     for r in range(0,8):
         for c in range(0,8):
-            Sprite(greenGrid,(A*r,A*c))
+            Sprite(greenGrid,(A*c,A*r))
             if data['board'][r][c] == 1:
-                Sprite(whiteCircle,(A*r,A*c))
+                Sprite(whiteCircle,(A*c,A*r))
             elif data['board'][r][c] == 2:
-                Sprite(blackCircle,(A*r,A*c))
+                Sprite(blackCircle,(A*c,A*r))
                 
 def flipPieces(rowLast,colLast):
     flipEast(rowLast,colLast)
