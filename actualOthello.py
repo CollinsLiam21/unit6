@@ -32,12 +32,18 @@ def flipPieces(rowLast,colLast):
         flipEast(rowLast,colLast)
     if colLast != 0:
         flipWest(rowLast,colLast)
-    flipNorth(rowLast,colLast)
-    flipSouth(rowLast,colLast)
-    flipNorthWest(rowLast,colLast)
-    flipNorthEast(rowLast,colLast)
-    flipSouthWest(rowLast,colLast)
-    flipSouthEast(rowLast,colLast)
+    if rowLast != 0:
+        flipNorth(rowLast,colLast)
+    if rowLast != 7:
+        flipSouth(rowLast,colLast)
+    if colLast != 0 and rowLast != 0:
+        flipNorthWest(rowLast,colLast)
+    if colLast != 7 and rowLast != 0:
+        flipNorthEast(rowLast,colLast)
+    if colLast != 0 and rowLast != 7:
+        flipSouthWest(rowLast,colLast)
+    if colLast != 7 and rowLast != 7:
+        flipSouthEast(rowLast,colLast)
 
 
 def flipEast(rowLast,colLast):
