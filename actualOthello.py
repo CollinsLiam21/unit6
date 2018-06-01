@@ -127,6 +127,36 @@ def flipNorthEast(rowLast,colLast):
                 data['board'][rowLast - i + 1][colLast + i - 1] = 2
                 i -= 1
     redrawAll()
+    
+def flipSouthWest(rowLast,colLast):
+    i = 1
+    while data['board'][rowLast + i][colLast - i] == data['turn']:
+        i += 1
+    if data['board'][rowLast + i][colLast - i] !=0:
+        print('flipping')
+        while i > 1:
+            if data['turn'] == 2:
+                data['board'][rowLast + i - 1][colLast - i + 1] = 1
+                i -= 1
+            else:
+                data['board'][rowLast + i - 1][colLast - i + 1] = 2
+                i -= 1
+    redrawAll()
+    
+def flipSouthEast(rowLast,colLast):
+    i = 1
+    while data['board'][rowLast + i][colLast + i] == data['turn']:
+        i += 1
+    if data['board'][rowLast + i][colLast + i] !=0:
+        print('flipping')
+        while i > 1:
+            if data['turn'] == 2:
+                data['board'][rowLast + i - 1][colLast + i - 1] = 1
+                i -= 1
+            else:
+                data['board'][rowLast + i - 1][colLast + i - 1] = 2
+                i -= 1
+    redrawAll()
 
 def mouseClick(event):
     column = int(event.x//A)
