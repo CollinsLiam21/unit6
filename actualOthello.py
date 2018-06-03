@@ -169,15 +169,14 @@ def flipSouthEast(rowLast,colLast):
 def mouseClick(event):
     column = int(event.x//A)
     row = int(event.y//A)
-    if data['board'][row+1][column] != 0 or data['board'][row-1][column] != 0 or data['board'][row][column+1] != 0 or data['board'][row][column-1] != 0 or data['board'][row+1][column+1] != 0 or data['board'][row-1][column-1] != 0 or data['board'][row-1][column+1] != 0 or data['board'][row+1][column-1] != 0:
-        if data['turn'] == 1:
-            data['board'][row][column] = 1
-            data['turn'] = 2
-            flipPieces(row,column)
-        else:
-            data['board'][row][column] = 2
-            data['turn'] = 1
-            flipPieces(row,column)
+    if data['turn'] == 1:
+        data['board'][row][column] = 1
+        data['turn'] = 2
+        flipPieces(row,column)
+    else:
+        data['board'][row][column] = 2
+        data['turn'] = 1
+        flipPieces(row,column)
         
     
     
