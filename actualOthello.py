@@ -29,6 +29,14 @@ def redrawAll():
             elif data['board'][r][c] == 2:
                 Sprite(blackCircle,(A*c,A*r))
                 i += 1
+
+def boardFull():
+    for r in range(0,8):
+        for c in range(0,8):
+            if data['board'][r][c] == 1:
+                i += 1
+            elif data['board'][r][c] == 2:
+                i += 1
                 
 def flipPieces(rowLast,colLast):
     if colLast != 7 and data['board'][rowLast][colLast + 1] != 0:
