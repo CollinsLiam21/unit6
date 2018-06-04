@@ -44,6 +44,7 @@ def flipPieces(rowLast,colLast):
         flipSouthWest(rowLast,colLast)
     if colLast != 7 and rowLast != 7 and data['board'][rowLast + 1][colLast + 1] != 0:
         flipSouthEast(rowLast,colLast)
+    redrawAll()
 
 
 def flipEast(rowLast,colLast):
@@ -59,7 +60,6 @@ def flipEast(rowLast,colLast):
             else:
                 data['board'][rowLast][colLast + i -1] = 2
                 i -= 1
-    redrawAll()
     
 def flipWest(rowLast,colLast):
     i = 1
@@ -74,7 +74,6 @@ def flipWest(rowLast,colLast):
             else:
                 data['board'][rowLast][colLast - i + 1] = 2
                 i -= 1
-    redrawAll()
 
 def flipNorth(rowLast,colLast):
     i = 1
@@ -89,7 +88,6 @@ def flipNorth(rowLast,colLast):
             else:
                 data['board'][rowLast - i +1][colLast] = 2
                 i -= 1
-    redrawAll()
     
 def flipSouth(rowLast,colLast):
     i = 1
@@ -104,7 +102,6 @@ def flipSouth(rowLast,colLast):
             else:
                 data['board'][rowLast + i -1][colLast] = 2
                 i -= 1
-    redrawAll()
     
 def flipNorthWest(rowLast,colLast):
     i = 1
@@ -119,7 +116,6 @@ def flipNorthWest(rowLast,colLast):
             else:
                 data['board'][rowLast - i + 1][colLast - i + 1] = 2
                 i -= 1
-    redrawAll()
     
 def flipNorthEast(rowLast,colLast):
     i = 1
@@ -134,7 +130,6 @@ def flipNorthEast(rowLast,colLast):
             else:
                 data['board'][rowLast - i + 1][colLast + i - 1] = 2
                 i -= 1
-    redrawAll()
     
 def flipSouthWest(rowLast,colLast):
     i = 1
@@ -149,7 +144,6 @@ def flipSouthWest(rowLast,colLast):
             else:
                 data['board'][rowLast + i - 1][colLast - i + 1] = 2
                 i -= 1
-    redrawAll()
     
 def flipSouthEast(rowLast,colLast):
     i = 1
@@ -164,7 +158,6 @@ def flipSouthEast(rowLast,colLast):
             else:
                 data['board'][rowLast + i - 1][colLast + i - 1] = 2
                 i -= 1
-    redrawAll()
 
 def mouseClick(event):
     column = int(event.x//A)
