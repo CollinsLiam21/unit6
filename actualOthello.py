@@ -31,12 +31,15 @@ def redrawAll():
                 i += 1
 
 def boardFull():
+    i = 0
     for r in range(0,8):
         for c in range(0,8):
             if data['board'][r][c] == 1:
                 i += 1
             elif data['board'][r][c] == 2:
                 i += 1
+    if i == 64:
+        data['boardFull'] = True
                 
 def flipPieces(rowLast,colLast):
     if colLast != 7 and data['board'][rowLast][colLast + 1] != 0:
@@ -55,6 +58,7 @@ def flipPieces(rowLast,colLast):
         flipSouthWest(rowLast,colLast)
     if colLast != 7 and rowLast != 7 and data['board'][rowLast + 1][colLast + 1] != 0:
         flipSouthEast(rowLast,colLast)
+    boardFull()
     redrawAll()
 
 
