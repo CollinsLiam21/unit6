@@ -25,8 +25,10 @@ def redrawAll():
             Sprite(greenGrid,(A*c,A*r))
             if data['board'][r][c] == 1:
                 Sprite(whiteCircle,(A*c,A*r))
+                i += 1
             elif data['board'][r][c] == 2:
                 Sprite(blackCircle,(A*c,A*r))
+                i += 1
                 
 def flipPieces(rowLast,colLast):
     if colLast != 7 and data['board'][rowLast][colLast + 1] != 0:
