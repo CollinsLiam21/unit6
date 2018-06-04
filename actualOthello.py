@@ -30,9 +30,9 @@ def redrawAll():
                 Sprite(blackCircle,(A*c,A*r))
                 i += 1
     if winner() == True and boardFull() == True:
-        Sprite(winBlack, (500,500))
+        Sprite(winBlack, (500,250))
     elif winner() == False and boardFull() == True:
-        Sprite(winWhite, (500,500))
+        Sprite(winWhite, (500,250))
 
 def winner():
     blackTotal = 0
