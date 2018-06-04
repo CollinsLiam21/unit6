@@ -30,7 +30,7 @@ def redrawAll():
                 Sprite(blackCircle,(A*c,A*r))
                 i += 1
     if winner() == True and boardFull() == True:
-        Sprite(winBlack, (500,250))
+        Sprite(winBlack, (500,150))
     elif winner() == False and boardFull() == True:
         Sprite(winWhite, (500,250))
 
@@ -220,9 +220,9 @@ if __name__ == '__main__':
     white = Color(0xFFFFFF,1)
     black = Color(0x000000,1)
     green = Color(0x008000,1)
-    winBlack = TextAsset('Black Has Won the Game!',fill=green,style='bold 50pt Times')
-    winWhite = TextAsset('White Has Won the Game!',fill=green,style='bold 50pt Times')
-    Tie = TextAsset('We Have A Tie!',fill=green,style='bold 50pt Times')
+    winBlack = TextAsset('Black Has Won the Game!',fill=green,style='bold 30pt Times')
+    winWhite = TextAsset('White Has Won the Game!',fill=green,style='bold 30pt Times')
+    Tie = TextAsset('We Have A Tie!',fill=green,style='bold 30pt Times')
     
     redrawAll()
     
