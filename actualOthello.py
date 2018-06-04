@@ -78,7 +78,6 @@ def flipPieces(rowLast,colLast):
         flipSouthWest(rowLast,colLast)
     if colLast != 7 and rowLast != 7 and data['board'][rowLast + 1][colLast + 1] != 0:
         flipSouthEast(rowLast,colLast)
-    boardFull()
     redrawAll()
 
 
@@ -221,9 +220,9 @@ if __name__ == '__main__':
     white = Color(0xFFFFFF,1)
     black = Color(0x000000,1)
     green = Color(0x008000,1)
-    winBlack = TextAsset('Black Has Won the Game!',fill=blue,style='bold 50pt Times')
-    winWhite = TextAsset('White Has Won the Game!',fill=blue,style='bold 50pt Times')
-    Tie = TextAsset('We Have A Tie!',fill=blue,style='bold 50pt Times')
+    winBlack = TextAsset('Black Has Won the Game!',fill=green,style='bold 50pt Times')
+    winWhite = TextAsset('White Has Won the Game!',fill=green,style='bold 50pt Times')
+    Tie = TextAsset('We Have A Tie!',fill=green,style='bold 50pt Times')
     
     redrawAll()
     
