@@ -29,6 +29,24 @@ def redrawAll():
             elif data['board'][r][c] == 2:
                 Sprite(blackCircle,(A*c,A*r))
                 i += 1
+    if winner() == True and boardFull() == True:
+        Sprite(winBlack, (500,500))
+    elif winner() == False and boardFull() == True:
+        Sprite(winWhite, (500,500))
+
+def winner():
+    blackTotal = 0
+    whiteTotal = 0
+    for r in range(0,8):
+        for c in range(0,8):
+            if data['board'][r][c] == 1:
+                whiteTotal += 1
+            elif data['board'][r][c] == 2:
+                blackTotal += 1
+    if blackTotal > whiteTotal:
+        return True
+    elif whiteTotal > blackTotal:
+        return False
 
 def boardFull():
     i = 0
@@ -39,7 +57,9 @@ def boardFull():
             elif data['board'][r][c] == 2:
                 i += 1
     if i == 64:
-        data['boardFull'] = True
+        return True
+    else:
+        return False
                 
 def flipPieces(rowLast,colLast):
     if colLast != 7 and data['board'][rowLast][colLast + 1] != 0:
@@ -195,13 +215,15 @@ if __name__ == '__main__':
     data = {}
     data['board'] = buildBoard()
     data['turn'] = 1
-    data['baordFull'] = False
     
     whiteCircle = CircleAsset(A/2,LineStyle(1,white),white)
     blackCircle = CircleAsset(A/2,LineStyle(1,black),black)
     white = Color(0xFFFFFF,1)
     black = Color(0x000000,1)
     green = Color(0x008000,1)
+    winBlack = TextAsset('Black Has Won the Game!',fill=blue,style='bold 50pt Times')
+    winWhite = TextAsset('White Has Won the Game!',fill=blue,style='bold 50pt Times')
+    Tie = TextAsset('We Have A Tie!',fill=blue,style='bold 50pt Times')
     
     redrawAll()
     
