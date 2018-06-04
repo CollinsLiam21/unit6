@@ -19,6 +19,7 @@ def redrawAll():
         item.destroy()
     A = 60
     greenGrid = RectangleAsset(A,A,LineStyle(4,black),green)
+    i = 0
     for r in range(0,8):
         for c in range(0,8):
             Sprite(greenGrid,(A*c,A*r))
@@ -180,6 +181,7 @@ if __name__ == '__main__':
     data = {}
     data['board'] = buildBoard()
     data['turn'] = 1
+    data['baordFull'] = False
     
     whiteCircle = CircleAsset(A/2,LineStyle(1,white),white)
     blackCircle = CircleAsset(A/2,LineStyle(1,black),black)
