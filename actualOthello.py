@@ -139,9 +139,9 @@ def flipSouth(rowLast,colLast):
     
 def flipNorthWest(rowLast,colLast):
     i = 1
-    while colLast - i > 0 and rowLast - i > 0 and data['board'][rowLast - i][colLast - i] == data['turn']:
+    while colLast - i >= 0 and rowLast - i >= 0 and data['board'][rowLast - i][colLast - i] == data['turn']:
         i += 1
-    if data['board'][rowLast - i][colLast - i] !=0:
+    if (colLast + i) >= 0 and (rowLast + i) >= 0 data['board'][rowLast - i][colLast - i] !=0:
         print('flipping')
         while i > 1:
             if data['turn'] == 2:
@@ -153,9 +153,9 @@ def flipNorthWest(rowLast,colLast):
     
 def flipNorthEast(rowLast,colLast):
     i = 1
-    while colLast + i < 7 and rowLast - i > 0 and data['board'][rowLast - i][colLast + i] == data['turn']:
+    while colLast + i <= 7 and rowLast - i >= 0 and data['board'][rowLast - i][colLast + i] == data['turn']:
         i += 1
-    if data['board'][rowLast - i][colLast + i] !=0:
+    if (colLast + i) <= 7 and (rowLast + i) >= 0 data['board'][rowLast - i][colLast + i] !=0:
         print('flipping')
         while i > 1:
             if data['turn'] == 2:
@@ -167,9 +167,9 @@ def flipNorthEast(rowLast,colLast):
     
 def flipSouthWest(rowLast,colLast):
     i = 1
-    while colLast - i > 0 and rowLast + i < 7 and data['board'][rowLast + i][colLast - i] == data['turn']:
+    while colLast - i >= 0 and rowLast + i <= 7 and data['board'][rowLast + i][colLast - i] == data['turn']:
         i += 1
-    if data['board'][rowLast + i][colLast - i] !=0:
+    if (colLast + i) >= 0 and (rowLast + i) <= 7 data['board'][rowLast + i][colLast - i] !=0:
         print('flipping')
         while i > 1:
             if data['turn'] == 2:
