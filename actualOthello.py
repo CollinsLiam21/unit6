@@ -83,7 +83,7 @@ def flipPieces(rowLast,colLast):
 
 def flipEast(rowLast,colLast):
     i = 1
-    while colLast + i < 7 and data['board'][rowLast][colLast + i] == data['turn']:
+    while colLast + i <= 7 and data['board'][rowLast][colLast + i] == data['turn']:
         i += 1
     if (colLast + i) <= 7 and data['board'][rowLast][colLast + i] !=0:
         print('flipping')
