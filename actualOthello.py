@@ -183,7 +183,7 @@ def flipSouthEast(rowLast,colLast):
     i = 1
     while (colLast + i) <= 7 and (rowLast + i) <= 7 and data['board'][rowLast + i][colLast + i] == data['turn']:
         i += 1
-    if rowLast != 7 and colLast != 7 and data['board'][rowLast + i][colLast + i] !=0:
+    if (colLast + i) <= 7 and (rowLast + i) <= 7 and data['board'][rowLast + i][colLast + i] !=0:
         print('flipping')
         while i > 1:
             if data['turn'] == 2:
