@@ -125,7 +125,7 @@ def flipNorth(rowLast,colLast):
     
 def flipSouth(rowLast,colLast):
     i = 1
-    while data['board'][rowLast + i][colLast] == data['turn']:
+    while rowLast + i < 7 and data['board'][rowLast + i][colLast] == data['turn']:
         i += 1
     if data['board'][rowLast + i][colLast] !=0:
         print('flipping')
