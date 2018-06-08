@@ -14,6 +14,7 @@ def buildBoard():
     board[4][3] = 1
     return board
 
+
 def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
@@ -31,8 +32,10 @@ def redrawAll():
                 i += 1
     if winner() == True and boardFull() == True:
         Sprite(winBlack, (500,150))
+        data['gameover'] = True
     elif winner() == False and boardFull() == True:
         Sprite(winWhite, (500,250))
+        data['gameover'] = True
 
 def winner():
     blackTotal = 0
@@ -86,7 +89,6 @@ def flipEast(rowLast,colLast):
     while colLast + i <= 7 and data['board'][rowLast][colLast + i] == data['turn']:
         i += 1
     if (colLast + i) <= 7 and data['board'][rowLast][colLast + i] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast][colLast + i -1] = 1
@@ -100,7 +102,6 @@ def flipWest(rowLast,colLast):
     while colLast - i >= 0 and data['board'][rowLast][colLast - i] == data['turn']:
         i += 1
     if (colLast - i) >= 0 and data['board'][rowLast][colLast - i] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast][colLast - i + 1] = 1
@@ -114,7 +115,6 @@ def flipNorth(rowLast,colLast):
     while rowLast - i >= 0 and data['board'][rowLast - i][colLast] == data['turn']:
         i += 1
     if (rowLast - i) >= 0 and data['board'][rowLast - i][colLast] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast - i +1][colLast] = 1
@@ -128,7 +128,6 @@ def flipSouth(rowLast,colLast):
     while rowLast + i <= 7 and data['board'][rowLast + i][colLast] == data['turn']:
         i += 1
     if (rowLast + i) <= 7 and data['board'][rowLast + i][colLast] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast + i -1][colLast] = 1
@@ -142,7 +141,6 @@ def flipNorthWest(rowLast,colLast):
     while colLast - i >= 0 and rowLast - i >= 0 and data['board'][rowLast - i][colLast - i] == data['turn']:
         i += 1
     if (colLast - i) >= 0 and (rowLast - i) >= 0 and data['board'][rowLast - i][colLast - i] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast - i + 1][colLast - i + 1] = 1
@@ -156,7 +154,6 @@ def flipNorthEast(rowLast,colLast):
     while colLast + i <= 7 and rowLast - i >= 0 and data['board'][rowLast - i][colLast + i] == data['turn']:
         i += 1
     if (colLast + i) <= 7 and (rowLast - i) >= 0 and data['board'][rowLast - i][colLast + i] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast - i + 1][colLast + i - 1] = 1
@@ -170,7 +167,6 @@ def flipSouthWest(rowLast,colLast):
     while colLast - i >= 0 and rowLast + i <= 7 and data['board'][rowLast + i][colLast - i] == data['turn']:
         i += 1
     if (colLast - i) >= 0 and (rowLast + i) <= 7 and data['board'][rowLast + i][colLast - i] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast + i - 1][colLast - i + 1] = 1
@@ -184,7 +180,6 @@ def flipSouthEast(rowLast,colLast):
     while (colLast + i) <= 7 and (rowLast + i) <= 7 and data['board'][rowLast + i][colLast + i] == data['turn']:
         i += 1
     if (colLast + i) <= 7 and (rowLast + i) <= 7 and data['board'][rowLast + i][colLast + i] !=0:
-        print('flipping')
         while i > 1:
             if data['turn'] == 2:
                 data['board'][rowLast + i - 1][colLast + i - 1] = 1
@@ -194,17 +189,18 @@ def flipSouthEast(rowLast,colLast):
                 i -= 1
 
 def mouseClick(event):
-    column = int(event.x//A)
-    row = int(event.y//A)
-    if data['board'][row][column] == 0:
-        if data['turn'] == 1:
-            data['board'][row][column] = 1
-            data['turn'] = 2
-            flipPieces(row,column)
-        else:
-            data['board'][row][column] = 2
-            data['turn'] = 1
-            flipPieces(row,column)
+    if data['gameover'] == False:
+        column = int(event.x//A)
+        row = int(event.y//A)
+        if data['board'][row][column] == 0:
+            if data['turn'] == 1:
+                data['board'][row][column] = 1
+                data['turn'] = 2
+                flipPieces(row,column)
+            else:
+                data['board'][row][column] = 2
+                data['turn'] = 1
+                flipPieces(row,column)
         
     
     
@@ -215,6 +211,7 @@ if __name__ == '__main__':
     data = {}
     data['board'] = buildBoard()
     data['turn'] = 1
+    data['gameover'] = False
     
     whiteCircle = CircleAsset(A/2,LineStyle(1,white),white)
     blackCircle = CircleAsset(A/2,LineStyle(1,black),black)
