@@ -4,6 +4,7 @@
 
 from ggame import *
 
+#length of one box
 A = 60
 
 #builds board and puts two white pieces and two black pieces in the center
