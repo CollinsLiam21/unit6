@@ -6,6 +6,7 @@ from ggame import *
 
 A = 60
 
+#builds board and puts two white pieces and two black pieces in the center
 def buildBoard():
     board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
     board[4][4] = 2
@@ -15,6 +16,7 @@ def buildBoard():
     return board
 
 
+#deletes all graphics and then draws the new configuration of the board, if there is a winner and the board if full then the game is over
 def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
@@ -37,6 +39,7 @@ def redrawAll():
         Sprite(winWhite, (500,250))
         data['gameover'] = True
 
+#decides who wins by counting up the black pieces and counting up the white pieces
 def winner():
     blackTotal = 0
     whiteTotal = 0
@@ -51,6 +54,7 @@ def winner():
     elif whiteTotal > blackTotal:
         return False
 
+#returns true if the board is full and false otherwise 
 def boardFull():
     i = 0
     for r in range(0,8):
@@ -64,6 +68,7 @@ def boardFull():
     else:
         return False
                 
+#calls all flip functions if conditions are met 
 def flipPieces(rowLast,colLast):
     if colLast != 7 and data['board'][rowLast][colLast + 1] != 0:
         flipEast(rowLast,colLast)
@@ -84,6 +89,7 @@ def flipPieces(rowLast,colLast):
     redrawAll()
 
 
+#checks in the east direction and flips if conditions are met
 def flipEast(rowLast,colLast):
     i = 1
     while colLast + i <= 7 and data['board'][rowLast][colLast + i] == data['turn']:
@@ -96,7 +102,8 @@ def flipEast(rowLast,colLast):
             else:
                 data['board'][rowLast][colLast + i -1] = 2
                 i -= 1
-    
+ 
+#checks in the west direction and flips if conditions are met   
 def flipWest(rowLast,colLast):
     i = 1
     while colLast - i >= 0 and data['board'][rowLast][colLast - i] == data['turn']:
@@ -110,6 +117,7 @@ def flipWest(rowLast,colLast):
                 data['board'][rowLast][colLast - i + 1] = 2
                 i -= 1
 
+#checks in the north direction and flips if conditions are met
 def flipNorth(rowLast,colLast):
     i = 1
     while rowLast - i >= 0 and data['board'][rowLast - i][colLast] == data['turn']:
@@ -123,6 +131,7 @@ def flipNorth(rowLast,colLast):
                 data['board'][rowLast - i +1][colLast] = 2
                 i -= 1
     
+#checks in the south direction and flips if conditions are met
 def flipSouth(rowLast,colLast):
     i = 1
     while rowLast + i <= 7 and data['board'][rowLast + i][colLast] == data['turn']:
@@ -135,7 +144,8 @@ def flipSouth(rowLast,colLast):
             else:
                 data['board'][rowLast + i -1][colLast] = 2
                 i -= 1
-    
+
+#checks in the northwest direction and flips if conditions are met
 def flipNorthWest(rowLast,colLast):
     i = 1
     while colLast - i >= 0 and rowLast - i >= 0 and data['board'][rowLast - i][colLast - i] == data['turn']:
@@ -148,7 +158,8 @@ def flipNorthWest(rowLast,colLast):
             else:
                 data['board'][rowLast - i + 1][colLast - i + 1] = 2
                 i -= 1
-    
+
+#checks in the northeast direction and flips if conditions are met
 def flipNorthEast(rowLast,colLast):
     i = 1
     while colLast + i <= 7 and rowLast - i >= 0 and data['board'][rowLast - i][colLast + i] == data['turn']:
@@ -161,7 +172,8 @@ def flipNorthEast(rowLast,colLast):
             else:
                 data['board'][rowLast - i + 1][colLast + i - 1] = 2
                 i -= 1
-    
+
+#checks in the southwest direction and flips if conditions are met
 def flipSouthWest(rowLast,colLast):
     i = 1
     while colLast - i >= 0 and rowLast + i <= 7 and data['board'][rowLast + i][colLast - i] == data['turn']:
@@ -174,7 +186,8 @@ def flipSouthWest(rowLast,colLast):
             else:
                 data['board'][rowLast + i - 1][colLast - i + 1] = 2
                 i -= 1
-    
+
+#checks in the southeast direction and flips if conditions are met
 def flipSouthEast(rowLast,colLast):
     i = 1
     while (colLast + i) <= 7 and (rowLast + i) <= 7 and data['board'][rowLast + i][colLast + i] == data['turn']:
@@ -188,6 +201,7 @@ def flipSouthEast(rowLast,colLast):
                 data['board'][rowLast + i - 1][colLast + i - 1] = 2
                 i -= 1
 
+#if possible, updates board based on who's turn it is
 def mouseClick(event):
     if data['gameover'] == False:
         column = int(event.x//A)
@@ -207,12 +221,13 @@ def mouseClick(event):
 
 if __name__ == '__main__':
     
-    
+    #dictionary
     data = {}
     data['board'] = buildBoard()
     data['turn'] = 1
     data['gameover'] = False
     
+    #graphics
     whiteCircle = CircleAsset(A/2,LineStyle(1,white),white)
     blackCircle = CircleAsset(A/2,LineStyle(1,black),black)
     white = Color(0xFFFFFF,1)
@@ -222,8 +237,9 @@ if __name__ == '__main__':
     winWhite = TextAsset('White Has Won the Game!',fill=green,style='bold 30pt Times')
     Tie = TextAsset('We Have A Tie!',fill=green,style='bold 30pt Times')
     
+    #calls redraw all
     redrawAll()
     
-    
+    #runs graphics
     App().listenMouseEvent('click',mouseClick)
     App().run()
